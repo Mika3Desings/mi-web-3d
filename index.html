@@ -10,8 +10,8 @@
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter:wght@400;700&display=swap');
 
         :root {
-            --mk-gray: #737373;   /* Gris MK3D */
-            --mk-blue: #122137;   /* Azul MK3D */
+            --mk-gray: #737373;
+            --mk-blue: #122137;
             --neon-blue: #00f2ff;
         }
 
@@ -28,7 +28,6 @@
             text-transform: uppercase; 
         }
 
-        /* Neón potente del Logo recuperado */
         .logo-neon {
             color: #fff;
             text-shadow: 0 0 5px #fff, 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
@@ -57,9 +56,10 @@
             -webkit-text-fill-color: transparent;
         }
 
+        /* CAMBIO AQUÍ: Neón suavizado */
         .text-neon-cyan {
             color: var(--neon-blue);
-            text-shadow: 0 0 15px rgba(0, 242, 255, 0.8), 0 0 30px rgba(0, 242, 255, 0.4);
+            text-shadow: 0 0 8px rgba(0, 242, 255, 0.6), 0 0 15px rgba(0, 242, 255, 0.3);
         }
     </style>
 </head>
