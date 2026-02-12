@@ -7,16 +7,27 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        /* Importamos Orbitron como reemplazo de Armstrong según el manual */
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter:wght@400;700&display=swap');
 
         :root {
-            --mk-gray: #737373;   /* Gris MK3D  */
-            --mk-blue: #122137;   /* Azul MK3D  */
-            --neon-blue: #00f2ff;
+            --mk-gray: #737373;   [cite_start]/* Gris según manual [cite: 14] */
+            --mk-blue: #122137;   [cite_start]/* Azul según manual [cite: 22] */
+            --neon-blue: #00f2ff; /* Cyan Neón */
         }
 
-        body { font-family: 'Inter', sans-serif; background-color: #000; margin: 0; color: white; }
-        .font-armstrong { font-family: 'Orbitron', sans-serif; text-transform: uppercase; } /* [cite: 23] */
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #000; 
+            margin: 0; 
+            color: white; 
+            overflow-x: hidden;
+        }
+
+        .font-armstrong { 
+            font-family: 'Orbitron', sans-serif; 
+            text-transform: uppercase; 
+        }
 
         .logo-neon { text-shadow: 0 0 10px var(--neon-blue); }
 
@@ -37,16 +48,17 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        /* Estilos de Título para evitar que se tapen */
+        /* Degradado para 'TU IDEA HECHA' */
         .text-white-fade {
-            background: linear-gradient(to bottom, #ffffff 40%, #737373 100%);
+            background: linear-gradient(to bottom, #ffffff 40%, var(--mk-gray) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
+        /* Brillo neón para 'REALIDAD' */
         .text-neon-cyan {
             color: var(--neon-blue);
-            text-shadow: 0 0 15px rgba(0, 242, 255, 0.8);
+            text-shadow: 0 0 15px rgba(0, 242, 255, 0.8), 0 0 30px rgba(0, 242, 255, 0.4);
         }
     </style>
 </head>
@@ -66,22 +78,22 @@
         </a>
     </nav>
 
-    <section class="hero-bg text-center px-6 pt-20"> <div class="max-w-5xl mx-auto">
-            <h1 class="font-armstrong text-4xl md:text-7xl lg:text-8xl leading-[0.9] mb-6">
+    <section class="hero-bg text-center px-6 pt-32 md:pt-40"> <div class="max-w-5xl mx-auto">
+            <h1 class="font-armstrong text-5xl md:text-7xl lg:text-8xl leading-[0.85] mb-8">
                 <span class="text-white-fade block">Tu idea</span>
                 <span class="text-white-fade block">hecha</span>
                 <span class="text-neon-cyan block">realidad</span>
             </h1>
             
-            <p class="text-cyan-400/80 tracking-[0.4em] uppercase text-[9px] md:text-[11px] font-bold mb-12">
+            <p class="text-cyan-400/80 tracking-[0.4em] uppercase text-[9px] md:text-[11px] font-bold mb-16">
                 Buenos Aires • High Quality Projects
             </p>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-2xl mx-auto">
-                <a href="servicios.html" class="border border-white/20 rounded-full py-4 hover:border-cyan-400 hover:bg-white/5 transition font-bold uppercase text-[9px] tracking-[0.2em] backdrop-blur-md">
+                <a href="#" class="cursor-default border border-white/20 rounded-full py-4 hover:border-cyan-400/50 transition font-bold uppercase text-[9px] tracking-[0.2em] backdrop-blur-md">
                     Imprimir
                 </a>
-                <a href="servicios.html" class="border border-white/20 rounded-full py-4 hover:border-cyan-400 hover:bg-white/5 transition font-bold uppercase text-[9px] tracking-[0.2em] backdrop-blur-md">
+                <a href="#" class="cursor-default border border-white/20 rounded-full py-4 hover:border-cyan-400/50 transition font-bold uppercase text-[9px] tracking-[0.2em] backdrop-blur-md">
                     Diseño
                 </a>
                 <a href="nosotros.html" class="border border-white/20 rounded-full py-4 hover:border-cyan-400 hover:bg-white/5 transition font-bold uppercase text-[9px] tracking-[0.2em] backdrop-blur-md">
