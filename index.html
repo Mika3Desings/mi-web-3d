@@ -3,90 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MK3D - Impresión 3D Profesional</title>
+    <title>MK3D - Impresión 3D</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
         body { font-family: 'Inter', sans-serif; }
-        .neon-border:hover { border-color: #3b82f6; box-shadow: 0 0 15px rgba(59, 130, 246, 0.5); }
+        
+        /* Imagen de fondo fija como en tu foto */
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://images.unsplash.com/photo-1631451095765-2c91616fc9e6?auto=format&fit=crop&q=80&w=1500');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
     </style>
 </head>
-<body class="bg-slate-950 text-white scroll-smooth">
+<body class="bg-black text-white">
 
-    <nav class="fixed w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800 p-4">
-        <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-black tracking-tighter text-blue-500">MK<span class="text-white">3D</span></h1>
-            <div class="space-x-6 font-bold text-sm uppercase">
-                <a href="#inicio" class="hover:text-blue-400">Inicio</a>
-                <a href="#productos" class="hover:text-blue-400">Productos</a>
-                <a href="#contacto" class="hover:text-blue-400 font-black bg-blue-600 px-4 py-2 rounded-lg">Cotizar</a>
-            </div>
+    <nav class="fixed w-full z-50 p-6 flex justify-between items-center bg-black/40 backdrop-blur-sm">
+        <div class="text-3xl font-black tracking-tighter text-white flex items-center">
+            <span class="text-blue-500">MK</span>3D
+        </div>
+        
+        <div class="hidden md:flex space-x-8 font-semibold text-sm uppercase tracking-wider">
+            <a href="#" class="hover:text-blue-400">Quienes Somos</a>
+            <a href="#" class="hover:text-blue-400">Origenes</a>
+            <a href="#" class="hover:text-blue-400">Servicios</a>
+            <a href="#" class="hover:text-blue-400">Contacto</a>
+        </div>
+
+        <div class="flex items-center space-x-4">
+            <a href="#" class="text-xl hover:text-blue-400"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="bg-blue-600 px-6 py-2 rounded-lg font-bold uppercase text-sm hover:bg-blue-700 transition">Cotizar</a>
         </div>
     </nav>
 
-    <section id="inicio" class="pt-32 pb-20 px-6">
-        <div class="container mx-auto text-center">
-            <span class="bg-blue-600/20 text-blue-400 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Servicio de Impresión 3D</span>
-            <h2 class="text-5xl md:text-7xl font-black mt-6 mb-6 leading-tight">Tu imaginación en <br><span class="text-blue-500 text-shadow-lg">Tres Dimensiones</span></h2>
-            <p class="text-slate-400 text-lg max-w-2xl mx-auto mb-10">Convertimos tus ideas y archivos STL en piezas reales con la mejor calidad y acabado del mercado.</p>
-            <a href="#productos" class="bg-white text-black px-8 py-4 rounded-xl font-black hover:bg-blue-500 hover:text-white transition-all">Explorar Catálogo</a>
-        </div>
-    </section>
-
-    <section id="productos" class="py-20 bg-slate-900/50">
-        <div class="container mx-auto px-6">
-            <h3 class="text-3xl font-bold mb-12 border-l-4 border-blue-500 pl-4">Productos Destacados</h3>
+    <section class="hero-bg flex flex-col justify-center items-center text-center px-6">
+        
+        <div class="max-w-4xl">
+            <span class="bg-blue-900/40 text-blue-400 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-4 inline-block border border-blue-500/30">
+                Servicio de Impresión 3D
+            </span>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 neon-border transition-all">
-                    <img src="https://images.unsplash.com/photo-1631451095765-2c91616fc9e6?auto=format&fit=crop&q=80&w=500" alt="Producto 1" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h4 class="text-xl font-bold">Figuras de Colección</h4>
-                        <p class="text-slate-400 mt-2 text-sm">Alta resolución en resina o PLA. Personajes de cine, juegos y más.</p>
-                        <p class="text-blue-400 font-bold mt-4 text-xl">$ Consultar</p>
-                    </div>
-                </div>
+            <h2 class="text-6xl md:text-8xl font-black mb-8 leading-tight">
+                Tu imaginación <br> en <br> <span class="text-blue-500">3D</span>
+            </h2>
 
-                <div class="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 neon-border transition-all">
-                    <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=500" alt="Producto 2" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h4 class="text-xl font-bold">Piezas Técnicas</h4>
-                        <p class="text-slate-400 mt-2 text-sm">Repuestos y prototipos funcionales en materiales resistentes.</p>
-                        <p class="text-blue-400 font-bold mt-4 text-xl">$ Consultar</p>
-                    </div>
-                </div>
-
-                <div class="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 neon-border transition-all">
-                    <img src="https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&q=80&w=500" alt="Producto 3" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h4 class="text-xl font-bold">Mates y Deco</h4>
-                        <p class="text-slate-400 mt-2 text-sm">Diseños únicos para tu hogar o para regalar algo especial.</p>
-                        <p class="text-blue-400 font-bold mt-4 text-xl">$ Consultar</p>
-                    </div>
-                </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
+                <a href="#" class="border-2 border-white/50 rounded-full py-3 px-6 hover:bg-white hover:text-black transition font-bold uppercase text-xs">Imprimir</a>
+                <a href="#" class="border-2 border-white/50 rounded-full py-3 px-6 hover:bg-white hover:text-black transition font-bold uppercase text-xs">Service</a>
+                <a href="#" class="border-2 border-white/50 rounded-full py-3 px-6 hover:bg-white hover:text-black transition font-bold uppercase text-xs">Diseño</a>
+                <a href="#" class="border-2 border-white/50 rounded-full py-3 px-6 hover:bg-white hover:text-black transition font-bold uppercase text-xs">+ Info</a>
             </div>
         </div>
+
     </section>
 
-    <section id="contacto" class="py-20">
-        <div class="container mx-auto px-6 max-w-4xl">
-            <div class="bg-blue-600 rounded-3xl p-8 md:p-12 text-center">
-                <h3 class="text-3xl font-black mb-4">¿Tienes un archivo listo?</h3>
-                <p class="mb-8 text-blue-100">Envíanos los detalles y te pasamos el presupuesto en menos de 24hs.</p>
-                
-                <form action="https://formspree.io/f/X_TU_ID_AQUI" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <input type="text" name="name" placeholder="Tu nombre" class="p-4 rounded-xl bg-white text-black" required>
-                    <input type="email" name="email" placeholder="Tu email" class="p-4 rounded-xl bg-white text-black" required>
-                    <textarea name="message" placeholder="¿Qué quieres imprimir?" class="p-4 rounded-xl bg-white text-black md:col-span-2" rows="4"></textarea>
-                    <button type="submit" class="md:col-span-2 bg-slate-950 text-white font-black py-4 rounded-xl hover:bg-slate-800 transition">Enviar Consulta</button>
-                </form>
-            </div>
+    <section class="py-20 bg-black">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-4xl font-bold mb-4 uppercase tracking-tighter">Productos</h3>
+            <p class="text-gray-500 max-w-2xl mx-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis dolore, impedit porro ut facere.</p>
         </div>
     </section>
-
-    <footer class="py-10 border-t border-slate-900 text-center text-slate-500 text-sm">
-        <p>&copy; 2026 MK3D - Impresión 3D. Hecho con IA.</p>
-    </footer>
 
 </body>
 </html>
