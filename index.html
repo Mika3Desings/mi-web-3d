@@ -56,7 +56,6 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* CAMBIO AQUÍ: Neón suavizado */
         .text-neon-cyan {
             color: var(--neon-blue);
             text-shadow: 0 0 8px rgba(0, 242, 255, 0.6), 0 0 15px rgba(0, 242, 255, 0.3);
@@ -73,11 +72,21 @@
             <a href="servicios.html" class="hover:text-cyan-400 transition">Servicios</a>
         </div>
 
-        <a href="contacto.html" class="border border-cyan-500 text-cyan-400 px-6 py-2 rounded-lg font-black uppercase text-[10px] tracking-widest hover:bg-cyan-500 hover:text-black transition">
-            Cotizar
-        </a>
-    </nav>
+        <div class="flex items-center space-x-4">
+            <a href="contacto.html" class="border border-cyan-500 text-cyan-400 px-6 py-2 rounded-lg font-black uppercase text-[10px] tracking-widest hover:bg-cyan-500 hover:text-black transition">
+                Cotizar
+            </a>
 
+            <button id="menu-btn" class="md:hidden text-cyan-400 text-xl focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full nav-blur border-b border-white/10 flex flex-col items-center py-6 space-y-6 md:hidden">
+            <a href="nosotros.html" class="font-bold text-[10px] uppercase tracking-[0.2em] text-gray-300 hover:text-cyan-400">Quienes Somos</a>
+            <a href="servicios.html" class="font-bold text-[10px] uppercase tracking-[0.2em] text-gray-300 hover:text-cyan-400">Servicios</a>
+        </div>
+    </nav>
     <section class="hero-bg text-center px-6 pt-20">
         <div class="max-w-5xl mx-auto">
             <h1 class="font-armstrong text-5xl md:text-7xl lg:text-8xl leading-[0.85] mb-6">
@@ -100,6 +109,18 @@
             </div>
         </div>
     </section>
+
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            const icon = btn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+    </script>
 
 </body>
 </html>
