@@ -34,6 +34,7 @@
             align-items: center;
             justify-content: center;
             margin-bottom: 30px;
+            overflow: hidden; /* Asegura que el video no se salga de los bordes redondeados */
         }
 
         .photo-box {
@@ -46,6 +47,13 @@
             align-items: center;
             justify-content: center;
             margin-bottom: 25px;
+            overflow: hidden; /* Asegura que la foto no se salga de los bordes redondeados */
+        }
+
+        .photo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Hace que la foto llene el espacio sin deformarse */
         }
 
         .custom-list li {
@@ -76,7 +84,7 @@
     <main class="max-w-6xl mx-auto">
         
         <div class="video-box">
-            <video autoplay muted loop playsinline class="w-full h-full object-cover">
+            <video autoplay muted loop class="w-full h-full object-cover">
                 <source src="impresoras.mp4" type="video/mp4">
                 Tu navegador no soporta videos.
             </video>
@@ -101,7 +109,7 @@
 
             <div>
                 <div class="photo-box">
-                    <p class="text-xs text-gray-600 uppercase">[ FOTO DE IMPRESIÓN 3D ]</p>
+                    <img src="impresion.jpg" alt="Ingeniería y Fabricación MK3D">
                 </div>
                 
                 <h3 class="font-armstrong text-xl text-cyan-400 mb-6 border-b border-cyan-500/30 pb-2 inline-block">
@@ -126,7 +134,7 @@
 
             <div>
                 <div class="photo-box">
-                    <p class="text-xs text-gray-600 uppercase">[ FOTO DE MODELADO 3D ]</p>
+                    <img src="modelado.jpg" alt="Optimización Técnica MK3D">
                 </div>
 
                 <h3 class="font-armstrong text-xl text-cyan-400 mb-6 border-b border-cyan-500/30 pb-2 inline-block">
