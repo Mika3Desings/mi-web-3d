@@ -13,14 +13,14 @@
         .font-armstrong { font-family: 'Orbitron', sans-serif; text-transform: uppercase; }
         .nav-blur { background: rgba(18, 33, 55, 0.9); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
         
-        /* Tarjetas Simétricas */
+        /* AJUSTE VISUAL: Alineación superior para que los títulos no queden chuecos */
         .neon-card { 
             background: rgba(18, 33, 55, 0.3); 
             border: 1px solid rgba(0, 242, 255, 0.1); 
-            min-height: 180px; /* Asegura simetría visual */
+            min-height: 180px; 
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start; /* Forzamos el contenido hacia arriba */
         }
         
         input, select { 
@@ -54,14 +54,14 @@
 
         <div class="grid md:grid-cols-2 gap-6 mb-12">
             <div class="neon-card p-8 rounded-2xl border border-white/5">
-                <h3 class="font-armstrong text-xs text-cyan-400 mb-4 tracking-widest">Estándares de Resolución</h3>
+                <h3 class="font-armstrong text-xs text-cyan-400 mb-6 tracking-widest border-b border-white/10 pb-2">Estándares de Resolución</h3>
                 <div class="space-y-4 text-[11px] leading-relaxed">
                     <p><strong class="text-white uppercase">Normal (0.28 - 0.20mm):</strong> Equilibrio perfecto entre velocidad y resistencia. Ideal para piezas mecánicas y prototipos funcionales.</p>
                     <p><strong class="text-white uppercase">Máxima (0.12 - 0.04mm):</strong> Acabado superficial superior, casi sin líneas de capa visibles. Recomendado para maquetas y modelos estéticos.</p>
                 </div>
             </div>
             <div class="neon-card p-8 rounded-2xl border border-white/5">
-                <h3 class="font-armstrong text-xs text-pink-500 mb-4 tracking-widest">Guía de Materiales Técnicos</h3>
+                <h3 class="font-armstrong text-xs text-pink-500 mb-6 tracking-widest border-b border-white/10 pb-2">Guía de Materiales Técnicos</h3>
                 <div class="grid grid-cols-2 gap-6 text-[11px] leading-relaxed">
                     <div>
                         <p class="text-white font-bold uppercase mb-1">PLA+ / PETG</p>
@@ -126,7 +126,7 @@
         const timeInput = document.getElementById('time');
         const totalDisplay = document.getElementById('total');
 
-        // Escuchar cambios en todos los campos
+        // Escuchar cambios
         [materialSelect, qualitySelect, weightInput, timeInput].forEach(el => {
             el.addEventListener('input', calculate);
         });
@@ -137,16 +137,16 @@
             const weight = parseFloat(weightInput.value) || 0;
             const time = parseFloat(timeInput.value) || 0;
 
-            // PARÁMETROS DE TUS DATOS 
-            const BASE_FEE = 1466.67;
-            const HOUR_RATE = 486.20;
-            const MARKUP = 4.488;
+            // PARÁMETROS DE CONFIGURACIÓN
+            const BASE_FEE = 1466.67;   // Costo fijo
+            const HOUR_RATE = 486.20;   // Costo hora máquina
+            const MARKUP = 6.0;         // Multiplicador de ganancia sobre material (AUMENTADO A 6)
 
             if (weight > 0 || time > 0) {
-                // Cálculo: (Gramos * Costo * 4.488) + (Horas * 486.20) + 1466.67
+                // Fórmula: (Gramos * Costo * 6) + (Horas * 486.20) + 1466.67
                 let result = (weight * materialCost * MARKUP) + (time * HOUR_RATE) + BASE_FEE;
                 
-                // Ajuste por Calidad Máxima
+                // Ajuste por Calidad
                 result = result * qualityMult;
 
                 totalDisplay.innerText = Math.round(result).toLocaleString('es-AR');
